@@ -43,19 +43,6 @@ define(["dojo/topic", "esri/arcgis/utils", "esri/dijit/Print",
         topic.subscribe("story-loaded-map", function (result) {
             console.log(app.map);
 
-
-
-            //CHANGE VIEW
-            if (app.map.toggle) {
-                app.map.toggle.destroy();
-            }
-
-            app.map.toggle = new BasemapToggle({
-                map: app.map,
-                basemap: "satellite"
-            }, "BasemapToggle");
-            app.map.toggle.startup();
-
             // PRINT
             if (app.printer) {
                 app.printer.destroy();
