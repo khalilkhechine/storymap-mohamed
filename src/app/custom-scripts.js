@@ -39,9 +39,11 @@ define(["dojo/topic", "esri/arcgis/utils", "esri/dijit/Print",
             }
         });
 
+
         // After a map is loaded (when the map starts to render)
         topic.subscribe("story-loaded-map", function (result) {
-            console.log(app.map);
+
+            console.log( app.map.getLayer(app.map.layerIds[0]));
 
             // PRINT
             if (app.printer) {
